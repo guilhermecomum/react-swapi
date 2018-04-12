@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Header } from "semantic-ui-react";
-import EpisodeStatisctis from "./components/EpisodeStatistics";
+import EpisodeStatisctis from "./EpisodeStatistics";
 
 export default class Episode extends Component {
   render() {

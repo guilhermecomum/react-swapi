@@ -4,8 +4,6 @@ import { Icon, Statistic, Responsive } from "semantic-ui-react";
 export default class EpisodeStatisctis extends Component {
   render() {
     const {
-      title,
-      director,
       planets,
       characters,
       starships,
@@ -14,7 +12,7 @@ export default class EpisodeStatisctis extends Component {
 
     return (
       <div>
-        <Responsive maxWidth={768}>
+        <Responsive maxWidth={991}>
           <Statistic.Group size="mini" widths="two">
             <Statistic color="yellow" inverted>
               <Statistic.Value>

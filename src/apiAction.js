@@ -30,7 +30,7 @@ export const apiAction = options => (dispatch, getState) => {
 
 
 export const apiDispatchAction = async (dispatch, options, getState) => {
-  const { prefix, path, method, params, baseUrl } = options
+  const { prefix, path, method, params } = options
   const { requestAttributes, processResponse, successAction } = options
 
   dispatch({

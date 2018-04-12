@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Star from "./images/star.svg";
-import Wars from "./images/wars.svg";
+import Star from "../images/star.svg";
+import Wars from "../images/wars.svg";
 
 export default class Header extends Component {
   render() {

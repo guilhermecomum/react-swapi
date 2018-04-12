@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Container, Grid, Dimmer, Loader } from "semantic-ui-react";
-
-import Layout from "./Layout";
-import Header from "./Header";
-import FilmsList from "./FilmsList";
-import Episode from "./Episode";
+import Header from "./components/Header";
+import FilmsList from "./components/FilmsList";
+import Episode from "./components/Episode";
 
 import { getFilms, chooseFilm } from "./actions";
 import "./App.css";
@@ -31,7 +29,7 @@ class App extends Component {
   }
 
   render() {
-    const { loading, films, film } = this.props;
+    const { loading, film } = this.props;
     if (loading) {
       return (
         <Dimmer active>
@@ -43,7 +41,7 @@ class App extends Component {
         <Container>
           <div className="main-container">
             <Header />
-            <Grid container stackable columns="equal" columns={2}>
+            <Grid container stackable columns="equal">
               <Grid.Column verticalAlign="middle">
                 <FilmsList {...this.props} />
               </Grid.Column>

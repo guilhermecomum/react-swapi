@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import { Menu, Segment } from "semantic-ui-react";
-
 export default class FilmsList extends Component {
   handleActive(episode) {
     const { film } = this.props;
@@ -8,7 +6,7 @@ export default class FilmsList extends Component {
   }
 
   render() {
-    const { films, chooseFilm, film } = this.props;
+    const { films, chooseFilm } = this.props;
 
     return (
       <ul className="menu">
