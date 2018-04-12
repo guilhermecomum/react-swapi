@@ -9,3 +9,9 @@ export const getFilms = () => {
     }
   })
 }
+
+export const chooseFilm = (id) => {
+  return dispatch => {
+    dispatch({ type: 'CHOOSE_FILM', id})
+  }
+}

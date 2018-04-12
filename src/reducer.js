@@ -1,4 +1,5 @@
 const initialState = {
+  film: null,
   films: [],
   loading: false,
 }
@@ -22,7 +23,14 @@ export default (state = initialState, action = {}) => {
     return {
       ...state,
       loading: false,
-      films: action.films.results
+      films: action.films.results,
+      film: action.films.results[0]
+    }
+  }
+  case 'CHOOSE_FILM': {
+    return {
+      ...state,
+      film: state.films.filter((f) => f.episode_id === action.id )[0]
     }
   }
   default:
