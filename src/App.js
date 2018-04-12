@@ -1,19 +1,25 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
 import { connect } from "react-redux";
-import { Dimmer, Loader } from "semantic-ui-react";
+import { Container, Grid, Dimmer, Loader } from "semantic-ui-react";
 
 import Layout from "./Layout";
-import { getFilms } from "./actions";
+import Header from "./Header";
+import FilmsList from "./FilmsList";
+import Episode from "./Episode";
+
+import { getFilms, chooseFilm } from "./actions";
+import "./App.css";
 
 const mapDispatchToProps = dispatch => {
   return {
-    getFilms: () => dispatch(getFilms())
+    getFilms: () => dispatch(getFilms()),
+    chooseFilm: id => dispatch(chooseFilm(id))
   };
 };
 
 const mapStateToProps = state => {
   return {
+    film: state.app.film,
     films: state.app.films,
     loading: state.app.loading
   };
@@ -25,29 +31,20 @@ class App extends Component {
   }
 
   render() {
-    const { loading, films } = this.props;
+    const { loading, films, film } = this.props;
     if (loading) {
       return (
         <Dimmer active>
           <Loader />
         </Dimmer>
-      )
+      );
     } else {
       return (
-        <Router>
-          <Layout
-            render={appProps => (
-              <div>
-                <h1>Star Wars - Films</h1>
-                <ul>
-                  {films.map(film => (
-                    <li>{film.title}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          />
-        </Router>
+        <Container className="main-container">
+          <Header />
+          <FilmsList {...this.props} />
+          {film && <Episode film={film} />}
+        </Container>
       );
     }
   }
