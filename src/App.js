@@ -40,10 +40,18 @@ class App extends Component {
       );
     } else {
       return (
-        <Container className="main-container">
-          <Header />
-          <FilmsList {...this.props} />
-          {film && <Episode film={film} />}
+        <Container>
+          <div className="main-container">
+            <Header />
+            <Grid container stackable columns="equal" columns={2}>
+              <Grid.Column verticalAlign="middle">
+                <FilmsList {...this.props} />
+              </Grid.Column>
+              <Grid.Column verticalAlign="middle">
+                {film && <Episode film={film} />}
+              </Grid.Column>
+            </Grid>
+          </div>
         </Container>
       );
     }

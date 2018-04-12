@@ -4,23 +4,11 @@ body {
 }
 
 .main-container {
-  display: flex !important;
+  display: flex;
   min-height: 100vh;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-}
-
-.ui.inverted.menu.yellow.active.item, .ui.inverted.yellow.menu {
-  color: red;
-}
-.spacer {
-  display: block;
-  height: 90px;
-}
-
-.App {
-  text-align: center;
 }
 
 .star, .wars {
@@ -36,20 +24,40 @@ body {
   animation: wars 5s ease-out;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.menu {
+  margin: 0;
+  padding: 0;
 }
 
-.App-title {
-  font-size: 1.5em;
+.menu-header, .menu-item {
+  list-style: none;
+  list-style: none;
+  margin: 10px;
+  text-align: center;
 }
 
-.App-intro {
-  font-size: large;
+.menu-header {
+  font-size: 2em;
+  padding-bottom: 20px;
 }
+
+.menu-item {
+  font-size: 1.3em;
+  cursor: pointer
+}
+
+.menu-item.active {
+  color: #ffe21f;
+}
+
+.episode-statistics {
+  margin-top: 40px;
+}
+
+.ui.statistic >.value .icon, .ui.statistics .statistic>.value .icon {
+  margin-right: 10px;
+}
+
 
 @keyframes star {
   0% {
